@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,52 @@
   <body>
     <header></header>
 
-    <main></main>
+    <main class="container mx-auto">
+      <!-- serach-phones -->
+      <section class="bg-gray-100 p-5 rounded-xl mt-10">
+        <input
+          id="search-field"
+          type="text"
+          placeholder="Search...."
+          class="input input-bordered input-primary w-full max-w-xs"
+        />
+        <button onclick="searchHandler()" class="btn btn-accent">Search</button>
+      </section>
+
+      <!-- ALL-phones -->
+      <section class="my-20">
+        <!-- loading sing  -->
+        <div id="loadSpinner" class="text-center text-6xl mb-12 hidden">
+          <span class="loading loading-infinity loading-lg"></span>
+        </div>
+
+        <div
+          id="phone-container"
+          class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        ></div>
+
+        <!-- show-all-container -->
+        <div id="show-all-contaienr" class="hidden text-center mt-5">
+          <button onclick="handleShowAll()" class="btn btn-outline btn-warning">
+            Show-all
+          </button>
+        </div>
+      </section>
+
+      <!-- showDetails-Modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box bg-gray-50">
+          <!-- details -->
+          <div id="phone-details" class=""></div>
+          <!-- close button -->
+          <div class="modal-action">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn bg-red-600 text-white">Close</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
 
     <footer></footer>
 
